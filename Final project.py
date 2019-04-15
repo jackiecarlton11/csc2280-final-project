@@ -4,8 +4,9 @@
 #To do:
 #fix end screen - descriptions need to show, pictures need to show - line 232
 #possible add: if they click the actual answer that counts too
+#add: Can change answer once clicked
 #possible add: new fonts
-#need to add: full descriptions for each result
+#need to add: full descriptions for each result 
 
 
 #Set up graphics window
@@ -122,7 +123,7 @@ startbutton.draw(win)
 startlabel = Text(Point(300,275), "Start!")
 startlabel.draw(win)
 
-mocslogo = Image(Point(500,310),"C:\\Users\\Admin\\Documents\\CSC 2280\\Screen Shots\\logo.png")
+mocslogo = Image(Point(500,310),"C:\\Users\\Admin\\Documents\\CSC 2280\\CSC Pics\\logo.png")
 mocslogo.draw(win)
 
 
@@ -256,7 +257,7 @@ while True:
                                         \nIt has a very convinent location next to the caf and the dorms, \
                                         \nso being hungry or meeting with a group is a piece of cake!")
                     instructions.setTexColor("blue")
-                    #rinkerpic1 = Image(Point(500, 310), "C:\\Users\\Admin\\Documents\\CSC 2280\\Screen Shots\\rinker.jpg")
+                    #rinkerpic1 = Image(Point(500, 310), "C:\\Users\\Admin\\Documents\\CSC 2280\\CSC Pics\\rinker.jpg")
                     pt4 = win.getMouse()
                     x = pt4.getX()
                     y = pt4.getY()
@@ -273,7 +274,7 @@ while True:
                                         \nof your materials sprawled out on a table. The community study spaces \
                                         \nare great for group projects or study sessions, and the windows double as \
                                         \nhuge wipe boards!")
-                    #tutuspic1 = Image(Point(500,310), "C:\\Users\\Admin\\Documents\\CSC 2280\\Screen Shots\\tutus2.jpg")
+                    #tutuspic1 = Image(Point(500,310), "C:\\Users\\Admin\\Documents\\CSC 2280\\CSC Pics\\tutus2.jpg")
                     pt4 = win.getMouse()
                     x = pt4.getX()
                     y = pt4.getY()
@@ -288,7 +289,7 @@ while True:
                                         \nbecause it is far from distractions. It helps that you are mostly on campus \
                                         \nall day anyway. The library has a convenient location near Tutu's, \
                                         \nwithout the busy environment. So now you know where to go, get studying!")
-                    #librarypic1 = Image(Point(500,310), "C:\\Users\\Admin\\Documents\\CSC 2280\\Screen Shots\\library.jpg")
+                    #librarypic1 = Image(Point(500,310), "C:\\Users\\Admin\\Documents\\CSC 2280\\CSC Pics\\library.jpg")
                     pt4 = win.getMouse()
                     x = pt4.getX()
                     y = pt4.getY()
@@ -298,7 +299,7 @@ while True:
                 else:
                     title.setText("You should study at your OWN dorm!")
                     instructions.setText("Your dorm is the perfect place for you to study. Blah blah blah. \n YAY!")
-                    #dormpic1 = Image(Point(500,310), "C:\\Users\\Admin\\Documents\\CSC 2280\\Screen Shots\\dorms.jpg")
+                    #dormpic1 = Image(Point(500,310), "C:\\Users\\Admin\\Documents\\CSC 2280\\CSC Pics\\dorms.jpg")
                     pt4 = win.getMouse()
                     x = pt4.getX()
                     y = pt4.getY()
