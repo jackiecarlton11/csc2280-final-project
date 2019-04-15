@@ -3,10 +3,8 @@
 
 #To do:
 #fix end screen - descriptions need to show, pictures need to show - line 232
-#possible add: if they click the actual answer that counts too
 #add: Can change answer once clicked
 #possible add: new fonts
-#need to add: full descriptions for each result 
 
 
 #Set up graphics window
@@ -102,7 +100,7 @@ D = ["D. Only is its my own music",
      "D. I like to sprawl out and sometimes even lay down",
      "D. I'll be in my residence hall",
      "D. Overtime, the assignment isn't due for awhile",
-     "D. Gurl I have NO idea.  ¯\_(ツ)_/¯",
+     "D. Gurl I have NO idea.  ¯\\_(ツ)_/¯",
      "D. Nope! I can control my sleep really well",
      "D. Pajamas for sureeeeee"]
 
@@ -123,7 +121,7 @@ startbutton.draw(win)
 startlabel = Text(Point(300,275), "Start!")
 startlabel.draw(win)
 
-mocslogo = Image(Point(500,310),"C:\\Users\\Admin\\Documents\\CSC 2280\\CSC Pics\\logo.png")
+mocslogo = Image(Point(500,310),"C:\\Users\\Admin\\Documents\\CSC 2280\\Final project\\logo.png")
 mocslogo.draw(win)
 
 
@@ -255,9 +253,10 @@ while True:
                                         \nRinker is a place full of hidden study places we don't always think of. \
                                         \nTheres computer access, tech help when needed, and printing options! \
                                         \nIt has a very convinent location next to the caf and the dorms, \
-                                        \nso being hungry or meeting with a group is a piece of cake!")
+                                        \nso being hungry or meeting with a group is a piece of cake! \
+                                        \nSo now you know where to go, so get studying!")
                     instructions.setTexColor("blue")
-                    #rinkerpic1 = Image(Point(500, 310), "C:\\Users\\Admin\\Documents\\CSC 2280\\CSC Pics\\rinker.jpg")
+                    rinkerpic1 = Image(Point(500, 310), "C:\\Users\\Admin\\Documents\\CSC 2280\\Final project\\rinker.jpg")
                     pt4 = win.getMouse()
                     x = pt4.getX()
                     y = pt4.getY()
@@ -273,8 +272,8 @@ while True:
                                         \nyou're working on a group project, or you just like having all \
                                         \nof your materials sprawled out on a table. The community study spaces \
                                         \nare great for group projects or study sessions, and the windows double as \
-                                        \nhuge wipe boards!")
-                    #tutuspic1 = Image(Point(500,310), "C:\\Users\\Admin\\Documents\\CSC 2280\\CSC Pics\\tutus2.jpg")
+                                        \nhuge wipe boards! \nSo now you know where to go, so get studying!")
+                    tutuspic1 = Image(Point(500,310), "C:\\Users\\Admin\\Documents\\CSC 2280\\Final project\\tutus2.jpg")
                     pt4 = win.getMouse()
                     x = pt4.getX()
                     y = pt4.getY()
@@ -288,18 +287,41 @@ while True:
                                         \nThe cubbies in the library are the perfect place to study for a hard test, \
                                         \nbecause it is far from distractions. It helps that you are mostly on campus \
                                         \nall day anyway. The library has a convenient location near Tutu's, \
-                                        \nwithout the busy environment. So now you know where to go, get studying!")
-                    #librarypic1 = Image(Point(500,310), "C:\\Users\\Admin\\Documents\\CSC 2280\\CSC Pics\\library.jpg")
+                                        \nwithout the busy environment. So now you know where to go, so get studying!")
+                    librarypic1 = Image(Point(500,310), "C:\\Users\\Admin\\Documents\\CSC 2280\\Final project\\library.jpg")
                     pt4 = win.getMouse()
                     x = pt4.getX()
                     y = pt4.getY()
                     if x >= 250 and x <=350 and y >= 250 and y <= 350:
                         win.close()
                         
-                else:
+                elif yourdorm > tutus and yourdorm > rinker and yourdorm > library:
                     title.setText("You should study at your OWN dorm!")
-                    instructions.setText("Your dorm is the perfect place for you to study. Blah blah blah. \n YAY!")
-                    #dormpic1 = Image(Point(500,310), "C:\\Users\\Admin\\Documents\\CSC 2280\\CSC Pics\\dorms.jpg")
+                    instructions.setText("Your dorm is the perfect place for you to study. \
+                                        \nEvery once in a while, people just need to have a chill study time. \
+                                        \nThis is the most comfortable place you can be, because you \
+                                        \ncan be in pajamas, laying down, and eating snack food too!\
+                                        \nBecause you tend to need everything, (like EVERYTHING) in \
+                                        \nyour desk, this is the easiest place for you to be. \
+                                        \nSo now you know where to go, so get studying!")
+                    dormpic1 = Image(Point(500,310), "C:\\Users\\Admin\\Documents\\CSC 2280\\Final project\\dorms.jpg")
+                    pt4 = win.getMouse()
+                    x = pt4.getX()
+                    y = pt4.getY()
+                    if x >= 250 and x <=350 and y >= 250 and y <= 350:
+                        win.close()
+                else:
+                    #if there is a tie
+                    title.setText("You should study your department's lounge today!")
+                    instructions.setText("A lot of the things you need out of a study place are \
+                                        \na mixed sort of needs. One of the great parts of being \
+                                        \nin a student lounge is the ability to have a study group with \
+                                        \nstudents just like you! They will be able to help you \
+                                        \nwith your classes, because they'll be in the same ones! \
+                                        \nIf you don't know where your department's lounge is, \
+                                        \nbe sure to talk to your professors! \
+                                        \nSo now you know where to go, so get studying!")
+                    tiepic = Image(Point(500,310), "C:\\Users\\Admin\\Documents\\CSC 2280\\Final project\\tie2.jpg")
                     pt4 = win.getMouse()
                     x = pt4.getX()
                     y = pt4.getY()
@@ -332,7 +354,6 @@ while True:
                     if hasstarted and x >= 75 and x <= 90 and y >= 115 and y <= 130:
                         library += 1
                         abutton.setFill("green")
-                        print("Yay! A button clicked")
                         break
 
 
