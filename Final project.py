@@ -6,6 +6,9 @@
 #add: Can change answer once clicked
 #possible add: new fonts
 
+#do the thing for the pictures
+import os
+root = os.getcwd() #root directory where this code is run from
 
 #Set up graphics window
 from graphics import *
@@ -121,7 +124,7 @@ startbutton.draw(win)
 startlabel = Text(Point(300,275), "Start!")
 startlabel.draw(win)
 
-mocslogo = Image(Point(500,310),"C:\\Users\\Admin\\Documents\\CSC 2280\\Final project\\logo.png")
+mocslogo = Image(Point(500,310), os.path.join(root, "logo.png"))
 mocslogo.draw(win)
 
 
@@ -256,7 +259,8 @@ while True:
                                         \nso being hungry or meeting with a group is a piece of cake! \
                                         \nSo now you know where to go, so get studying!")
                     instructions.setTexColor("blue")
-                    rinkerpic1 = Image(Point(500, 310), "C:\\Users\\Admin\\Documents\\CSC 2280\\Final project\\rinker.jpg")
+                    rinkerpic1 = Image(Point(500, 310), os.path.join(root, "rinker.jpg"))
+                    rinkerpic1.draw(win)
                     pt4 = win.getMouse()
                     x = pt4.getX()
                     y = pt4.getY()
@@ -274,6 +278,7 @@ while True:
                                         \nare great for group projects or study sessions, and the windows double as \
                                         \nhuge wipe boards! \nSo now you know where to go, so get studying!")
                     tutuspic1 = Image(Point(500,310), "C:\\Users\\Admin\\Documents\\CSC 2280\\Final project\\tutus2.jpg")
+                    tutuspic1.draw(win)
                     pt4 = win.getMouse()
                     x = pt4.getX()
                     y = pt4.getY()
@@ -288,7 +293,8 @@ while True:
                                         \nbecause it is far from distractions. It helps that you are mostly on campus \
                                         \nall day anyway. The library has a convenient location near Tutu's, \
                                         \nwithout the busy environment. So now you know where to go, so get studying!")
-                    librarypic1 = Image(Point(500,310), "C:\\Users\\Admin\\Documents\\CSC 2280\\Final project\\library.jpg")
+                    librarypic1 = Image(Point(500,310), os.path.join(root, "library.jpg"))
+                    librarypic1.draw(win)
                     pt4 = win.getMouse()
                     x = pt4.getX()
                     y = pt4.getY()
@@ -304,7 +310,8 @@ while True:
                                         \nBecause you tend to need everything, (like EVERYTHING) in \
                                         \nyour desk, this is the easiest place for you to be. \
                                         \nSo now you know where to go, so get studying!")
-                    dormpic1 = Image(Point(500,310), "C:\\Users\\Admin\\Documents\\CSC 2280\\Final project\\dorms.jpg")
+                    dormpic1 = Image(Point(500,310), os.path.join(root, "dorms.jpg"))
+                    formpic1.draw(win)
                     pt4 = win.getMouse()
                     x = pt4.getX()
                     y = pt4.getY()
@@ -321,7 +328,8 @@ while True:
                                         \nIf you don't know where your department's lounge is, \
                                         \nbe sure to talk to your professors! \
                                         \nSo now you know where to go, so get studying!")
-                    tiepic = Image(Point(500,310), "C:\\Users\\Admin\\Documents\\CSC 2280\\Final project\\tie2.jpg")
+                    tiepic = Image(Point(500,310), os.path.join(root, "tie2.jpg"))
+                    tiepic.draw(win)
                     pt4 = win.getMouse()
                     x = pt4.getX()
                     y = pt4.getY()
