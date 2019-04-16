@@ -259,7 +259,7 @@ while True:
                                         \nso being hungry or meeting with a group is a piece of cake! \
                                         \nSo now you know where to go, so get studying!")
                     instructions.setTexColor("blue")
-                    rinkerpic1 = Image(Point(500, 310), os.path.join(root, "rinker.jpg"))
+                    rinkerpic1 = Image(Point(500, 310), os.path.join(root, "rinker.png"))
                     rinkerpic1.draw(win)
                     pt4 = win.getMouse()
                     x = pt4.getX()
@@ -277,7 +277,7 @@ while True:
                                         \nof your materials sprawled out on a table. The community study spaces \
                                         \nare great for group projects or study sessions, and the windows double as \
                                         \nhuge wipe boards! \nSo now you know where to go, so get studying!")
-                    tutuspic1 = Image(Point(500,310), "C:\\Users\\Admin\\Documents\\CSC 2280\\Final project\\tutus2.jpg")
+                    tutuspic1 = Image(Point(530,325),os.path.join(root, "tutus2.png"))
                     tutuspic1.draw(win)
                     pt4 = win.getMouse()
                     x = pt4.getX()
@@ -293,7 +293,7 @@ while True:
                                         \nbecause it is far from distractions. It helps that you are mostly on campus \
                                         \nall day anyway. The library has a convenient location near Tutu's, \
                                         \nwithout the busy environment. So now you know where to go, so get studying!")
-                    librarypic1 = Image(Point(500,310), os.path.join(root, "library.jpg"))
+                    librarypic1 = Image(Point(500,310), os.path.join(root, "library.png"))
                     librarypic1.draw(win)
                     pt4 = win.getMouse()
                     x = pt4.getX()
@@ -310,8 +310,8 @@ while True:
                                         \nBecause you tend to need everything, (like EVERYTHING) in \
                                         \nyour desk, this is the easiest place for you to be. \
                                         \nSo now you know where to go, so get studying!")
-                    dormpic1 = Image(Point(500,310), os.path.join(root, "dorms.jpg"))
-                    formpic1.draw(win)
+                    dormpic1 = Image(Point(500,310), os.path.join(root, "dorms.png"))
+                    dormpic1.draw(win)
                     pt4 = win.getMouse()
                     x = pt4.getX()
                     y = pt4.getY()
@@ -319,7 +319,8 @@ while True:
                         win.close()
                 else:
                     #if there is a tie
-                    title.setText("You should study your department's lounge today!")
+                    title.move(0,25)
+                    title.setText("You should study at your \ndepartment's lounge today!")
                     instructions.setText("A lot of the things you need out of a study place are \
                                         \na mixed sort of needs. One of the great parts of being \
                                         \nin a student lounge is the ability to have a study group with \
@@ -328,9 +329,9 @@ while True:
                                         \nIf you don't know where your department's lounge is, \
                                         \nbe sure to talk to your professors! \
                                         \nSo now you know where to go, so get studying!")
-                    tiepic = Image(Point(500,310), os.path.join(root, "tie2.jpg"))
+                    tiepic = Image(Point(500,310), os.path.join(root, "tie2.png"))
                     tiepic.draw(win)
-                    pt4 = win.getMouse()
+                    pt4 = win.checkMouse()
                     x = pt4.getX()
                     y = pt4.getY()
                     if x >= 250 and x <=350 and y >= 250 and y <= 350:
