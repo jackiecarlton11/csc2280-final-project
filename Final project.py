@@ -94,7 +94,7 @@ C = ["C. I need background noise",
      "C. I do! I usually need some sort of caffeine",
      "C. Something cute, just in case I run into people"]
 #yourdorm
-D = ["D. Only is its my own music",
+D = ["D. Only if its my own music",
      "D. Literally every piece of school supplies I own",
      "D. Nope, its just me.",
      "D. Yeah, but the campus doesn't have a lot of options I like",
@@ -233,7 +233,7 @@ while True:
                 
                 question.undraw()
                 
-                opta.undraw()
+                #opta.undraw()
                 optb.undraw()
                 optc.undraw()
                 optd.undraw()
@@ -251,91 +251,152 @@ while True:
                 #give user results
                 if rinker > tutus and rinker > library and rinker > yourdorm:
                     title.setText("You should study at Rinker!")
-                    instructions.setText("Rinker is the perfect place for you to study! \
-                                        You enjoy the quiet aspects of the library, but don't like how crowded it can be. \
-                                        \nRinker is a place full of hidden study places we don't always think of. \
-                                        \nTheres computer access, tech help when needed, and printing options! \
-                                        \nIt has a very convinent location next to the caf and the dorms, \
-                                        \nso being hungry or meeting with a group is a piece of cake! \
-                                        \nSo now you know where to go, so get studying!")
-                    instructions.setTexColor("blue")
-                    rinkerpic1 = Image(Point(500, 310), os.path.join(root, "rinker.png"))
+                    opta.setText("Rinker is the perfect place for you to study! \
+                                \nYou enjoy the quiet aspects of the library, but don't like how crowded it can be. \
+                                \nRinker is a place full of hidden study places we don't always think of. \
+                                \nTheres computer access, tech help when needed, and printing options! \
+                                \nIt has a very convinent location next to the caf and the dorms, \
+                                \nso being hungry or meeting with a group is a piece of cake! \
+                                \nSo now you know where to go, so get studying!")
+                    opta.setTextColor("blue")
+                    opta.move(50,0)
+                    rinkerpic1 = Image(Point(500, 320), os.path.join(root, "rinker.png"))
                     rinkerpic1.draw(win)
+
                     pt4 = win.getMouse()
-                    x = pt4.getX()
-                    y = pt4.getY()
-                    if x >= 250 and x <=350 and y >= 250 and y <= 350:
-                        win.close()
-                        
+
+                    #to close the program
+                    while True:
+                        x = pt4.getX()
+                        y = pt4.getY()
+                        if x >= 250 and x <=350 and y >= 250 and y <= 350:
+                            win.close()
+                            break
+                        else:
+                            optd.setText("Sorry, you didn't click in the right place, \nplease try again!")
+                            optd.move(0,50)
+                            optd.draw(win)
+                            pt4 = win.getMouse()
+
                 elif tutus > rinker and tutus > library and tutus > yourdorm:
                     title.setText("You should study at Tutu's!")
-                    instructions.setText("Tutu's is the perfect place for you to study! \
-                                        \nYou enjoy having a lot of conveniences around you, plus who doesn't \
-                                        \nlove a cup of coffee while studying? You're not easily distracted, so being \
-                                        \naround people and noise doesn't bother you. It could be that \
-                                        \nyou're working on a group project, or you just like having all \
-                                        \nof your materials sprawled out on a table. The community study spaces \
-                                        \nare great for group projects or study sessions, and the windows double as \
-                                        \nhuge wipe boards! \nSo now you know where to go, so get studying!")
-                    tutuspic1 = Image(Point(530,325),os.path.join(root, "tutus2.png"))
+                    opta.setText("Tutu's is the perfect place for you to study! \
+                                \nYou enjoy having a lot of conveniences around you, \
+                                \nplus who doesn't love a cup of coffee while studying? \
+                                \nYou're not easily distracted, so being around people \
+                                \nand noise doesn't bother you. It could be that \
+                                \nyou're working on a group project, or you just like having all \
+                                \nof your materials sprawled out on a table. \
+                                \nThe community study spaces are great for group projects \
+                                \nor study sessions, and the windows double as huge wipe boards! \
+                                \nSo now you know where to go, so get studying!")
+                    opta.setTextColor("blue")
+                    opta.move(50,0)
+                    tutuspic1 = Image(Point(530,325),os.path.join(root, "coffee.png"))
                     tutuspic1.draw(win)
+                    
                     pt4 = win.getMouse()
-                    x = pt4.getX()
-                    y = pt4.getY()
-                    if x >= 250 and x <=350 and y >= 250 and y <= 350:
-                        win.close()
+
+                    #to close the program
+                    while True:
+                        x = pt4.getX()
+                        y = pt4.getY()
+                        if x >= 250 and x <=350 and y >= 250 and y <= 350:
+                            win.close()
+                            break
+                        else:
+                            optd.setText("Sorry, you didn't click in the right place, \nplease try again!")
+                            optd.move(0,50)
+                            optd.draw(win)
+                            pt4 = win.getMouse()
                         
                 elif library > tutus and library > rinker and library > yourdorm:
                     title.setText("You should study at the library!")
-                    instructions.setText("The library is the perfect place for you to study! \
-                                        \nLike a lot of students, you need a distraction free zone while you're studying. \
-                                        \nThe cubbies in the library are the perfect place to study for a hard test, \
-                                        \nbecause it is far from distractions. It helps that you are mostly on campus \
-                                        \nall day anyway. The library has a convenient location near Tutu's, \
-                                        \nwithout the busy environment. So now you know where to go, so get studying!")
+                    opta.setText("The library is the perfect place for you to study! \
+                                 \nLike a lot of students, you need a distraction free zone while you're studying. \
+                                \nThe cubbies in the library are the perfect place to study for a hard test, \
+                                \nbecause it is far from distractions. It helps that you are mostly on campus \
+                                \nall day anyway. The library has a convenient location near Tutu's, \
+                                \nwithout the busy environment. \
+                                \nSo now you know where to go, so get studying!")
+                    opta.setTextColor("blue")
+                    opta.move(50,0)
                     librarypic1 = Image(Point(500,310), os.path.join(root, "library.png"))
                     librarypic1.draw(win)
+                   
                     pt4 = win.getMouse()
-                    x = pt4.getX()
-                    y = pt4.getY()
-                    if x >= 250 and x <=350 and y >= 250 and y <= 350:
-                        win.close()
+
+                    #to close the program
+                    while True:
+                        x = pt4.getX()
+                        y = pt4.getY()
+                        if x >= 250 and x <=350 and y >= 250 and y <= 350:
+                            win.close()
+                            break
+                        else:
+                            optd.setText("Sorry, you didn't click in the right place, \nplease try again!")
+                            optd.move(0,50)
+                            optd.draw(win)
+                            pt4 = win.getMouse()
                         
                 elif yourdorm > tutus and yourdorm > rinker and yourdorm > library:
                     title.setText("You should study at your OWN dorm!")
-                    instructions.setText("Your dorm is the perfect place for you to study. \
+                    opta.setText("Your dorm is the perfect place for you to study. \
                                         \nEvery once in a while, people just need to have a chill study time. \
                                         \nThis is the most comfortable place you can be, because you \
                                         \ncan be in pajamas, laying down, and eating snack food too!\
                                         \nBecause you tend to need everything, (like EVERYTHING) in \
                                         \nyour desk, this is the easiest place for you to be. \
                                         \nSo now you know where to go, so get studying!")
+                    opta.setTextColor("blue")
+                    opta.move(50,0)
                     dormpic1 = Image(Point(500,310), os.path.join(root, "dorms.png"))
                     dormpic1.draw(win)
+                    
                     pt4 = win.getMouse()
-                    x = pt4.getX()
-                    y = pt4.getY()
-                    if x >= 250 and x <=350 and y >= 250 and y <= 350:
-                        win.close()
+
+                    #to close the program
+                    while True:
+                        x = pt4.getX()
+                        y = pt4.getY()
+                        if x >= 250 and x <=350 and y >= 250 and y <= 350:
+                            win.close()
+                            break
+                        else:
+                            optd.setText("Sorry, you didn't click in the right place, \nplease try again!")
+                            optd.move(0,50)
+                            optd.draw(win)
+                            pt4 = win.getMouse()
                 else:
                     #if there is a tie
                     title.move(0,25)
                     title.setText("You should study at your \ndepartment's lounge today!")
-                    instructions.setText("A lot of the things you need out of a study place are \
+                    opta.setText("A lot of the things you need out of a study place are \
                                         \na mixed sort of needs. One of the great parts of being \
                                         \nin a student lounge is the ability to have a study group with \
-                                        \nstudents just like you! They will be able to help you \
-                                        \nwith your classes, because they'll be in the same ones! \
+                                        \nstudents just like you! \
                                         \nIf you don't know where your department's lounge is, \
                                         \nbe sure to talk to your professors! \
                                         \nSo now you know where to go, so get studying!")
+                    opta.setTextColor("blue")
+                    opta.move(50,25)
                     tiepic = Image(Point(500,310), os.path.join(root, "tie2.png"))
                     tiepic.draw(win)
-                    pt4 = win.checkMouse()
-                    x = pt4.getX()
-                    y = pt4.getY()
-                    if x >= 250 and x <=350 and y >= 250 and y <= 350:
-                        win.close()
+                   
+                    pt4 = win.getMouse()
+
+                    #to close the program
+                    while True:
+                        x = pt4.getX()
+                        y = pt4.getY()
+                        if x >= 250 and x <=350 and y >= 250 and y <= 350:
+                            win.close()
+                            break
+                        else:
+                            optd.setText("Sorry, you didn't click in the right place, \nplease try again!")
+                            optd.move(0,50)
+                            optd.draw(win)
+                            pt4 = win.getMouse()
 
             #Run through the questions   
             else:
