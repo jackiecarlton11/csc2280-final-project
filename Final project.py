@@ -287,7 +287,7 @@ while True:
                     rinkerpic1.draw(win)
                     
 
-                    waitforfinish(win, optd)
+                    finished = waitforfinish(win, optd)
 
                 elif tutus > rinker and tutus > library and tutus > yourdorm:
                     title.setText("You should study at Tutu's!")
@@ -306,7 +306,7 @@ while True:
                     tutuspic1 = Image(Point(530,325),os.path.join(root, "coffee.png"))
                     tutuspic1.draw(win)
                     
-                    waitforfinish(win,optd)
+                    finished = waitforfinish(win,optd)
                         
                 elif library > tutus and library > rinker and library > yourdorm:
                     title.setText("You should study at the library!")
@@ -322,7 +322,7 @@ while True:
                     librarypic1 = Image(Point(500,310), os.path.join(root, "library.png"))
                     librarypic1.draw(win)
                    
-                    waitforfinish(win,optd)
+                    finished = waitforfinish(win,optd)
                         
                 elif yourdorm > tutus and yourdorm > rinker and yourdorm > library:
                     title.setText("You should study at your OWN dorm!")
@@ -338,7 +338,7 @@ while True:
                     dormpic1 = Image(Point(500,310), os.path.join(root, "dorms.png"))
                     dormpic1.draw(win)
                     
-                    waitforfinish(win, optd)
+                    finished = waitforfinish(win, optd)
 
                 else:
                     #if there is a tie
@@ -356,7 +356,7 @@ while True:
                     tiepic = Image(Point(500,310), os.path.join(root, "tie2.png"))
                     tiepic.draw(win)
                    
-                    waitforfinish(win, optd)
+                    finished = waitforfinish(win, optd)
 
             #Run through the questions   
             else:
