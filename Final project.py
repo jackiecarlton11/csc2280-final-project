@@ -15,6 +15,28 @@ from graphics import *
 win = GraphWin("Where should you study? FSC Edition!", 600, 400)
 
 
+
+
+def waitforfinish(win,optd):
+
+    pt4 = win.getMouse()
+    warned = False
+    while True:
+        x = pt4.getX()
+        y = pt4.getY()
+
+        if x >= 250 and x <=350 and y >= 250 and y <= 350:
+            win.close()
+            finished = True
+            break
+        elif not warned:
+            optd.setText("Sorry, you didn't click in the right place, \nplease try again!")
+            optd.move(0,50)
+            optd.draw(win)
+            warned = True
+        pt4 = win.getMouse()
+    return finished
+
 #initialize different study areas
 rinker = 0
 tutus = 0
@@ -145,6 +167,7 @@ optc.setSize(11)
 optd.setSize(11)
 i = 0
 
+finished = False
 while True:
 
     #change from start screen to actual quiz
@@ -262,21 +285,9 @@ while True:
                     opta.move(50,0)
                     rinkerpic1 = Image(Point(500, 320), os.path.join(root, "rinker.png"))
                     rinkerpic1.draw(win)
+                    
 
-                    pt4 = win.getMouse()
-
-                    #to close the program
-                    while True:
-                        x = pt4.getX()
-                        y = pt4.getY()
-                        if x >= 250 and x <=350 and y >= 250 and y <= 350:
-                            win.close()
-                            break
-                        else:
-                            optd.setText("Sorry, you didn't click in the right place, \nplease try again!")
-                            optd.move(0,50)
-                            optd.draw(win)
-                            pt4 = win.getMouse()
+                    waitforfinish(win, optd)
 
                 elif tutus > rinker and tutus > library and tutus > yourdorm:
                     title.setText("You should study at Tutu's!")
@@ -295,20 +306,7 @@ while True:
                     tutuspic1 = Image(Point(530,325),os.path.join(root, "coffee.png"))
                     tutuspic1.draw(win)
                     
-                    pt4 = win.getMouse()
-
-                    #to close the program
-                    while True:
-                        x = pt4.getX()
-                        y = pt4.getY()
-                        if x >= 250 and x <=350 and y >= 250 and y <= 350:
-                            win.close()
-                            break
-                        else:
-                            optd.setText("Sorry, you didn't click in the right place, \nplease try again!")
-                            optd.move(0,50)
-                            optd.draw(win)
-                            pt4 = win.getMouse()
+                    waitforfinish(win,optd)
                         
                 elif library > tutus and library > rinker and library > yourdorm:
                     title.setText("You should study at the library!")
@@ -324,20 +322,7 @@ while True:
                     librarypic1 = Image(Point(500,310), os.path.join(root, "library.png"))
                     librarypic1.draw(win)
                    
-                    pt4 = win.getMouse()
-
-                    #to close the program
-                    while True:
-                        x = pt4.getX()
-                        y = pt4.getY()
-                        if x >= 250 and x <=350 and y >= 250 and y <= 350:
-                            win.close()
-                            break
-                        else:
-                            optd.setText("Sorry, you didn't click in the right place, \nplease try again!")
-                            optd.move(0,50)
-                            optd.draw(win)
-                            pt4 = win.getMouse()
+                    waitforfinish(win,optd)
                         
                 elif yourdorm > tutus and yourdorm > rinker and yourdorm > library:
                     title.setText("You should study at your OWN dorm!")
@@ -353,20 +338,8 @@ while True:
                     dormpic1 = Image(Point(500,310), os.path.join(root, "dorms.png"))
                     dormpic1.draw(win)
                     
-                    pt4 = win.getMouse()
+                    waitforfinish(win, optd)
 
-                    #to close the program
-                    while True:
-                        x = pt4.getX()
-                        y = pt4.getY()
-                        if x >= 250 and x <=350 and y >= 250 and y <= 350:
-                            win.close()
-                            break
-                        else:
-                            optd.setText("Sorry, you didn't click in the right place, \nplease try again!")
-                            optd.move(0,50)
-                            optd.draw(win)
-                            pt4 = win.getMouse()
                 else:
                     #if there is a tie
                     title.move(0,25)
@@ -383,20 +356,7 @@ while True:
                     tiepic = Image(Point(500,310), os.path.join(root, "tie2.png"))
                     tiepic.draw(win)
                    
-                    pt4 = win.getMouse()
-
-                    #to close the program
-                    while True:
-                        x = pt4.getX()
-                        y = pt4.getY()
-                        if x >= 250 and x <=350 and y >= 250 and y <= 350:
-                            win.close()
-                            break
-                        else:
-                            optd.setText("Sorry, you didn't click in the right place, \nplease try again!")
-                            optd.move(0,50)
-                            optd.draw(win)
-                            pt4 = win.getMouse()
+                    waitforfinish(win, optd)
 
             #Run through the questions   
             else:
@@ -456,6 +416,8 @@ while True:
                         
             #go to the next question in the cycle     
             i += 1
+    if finished:
+        break
 
 
 
