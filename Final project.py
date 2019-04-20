@@ -30,7 +30,7 @@ def waitforfinish(win,optd):
             finished = True
             break
         elif not warned:
-            optd.setText("Sorry, you didn't click in the right place, \nplease try again!")
+            optd.setText("Oops! Looks like you missed the finish button, \nplease try again!")
             optd.move(0,50)
             optd.draw(win)
             warned = True
@@ -74,6 +74,14 @@ questions = ["What noise can you handle while studying?",
 numofq = ["Question 1", "Question 2", "Question 3", "Question 4",
           "Question 5", "Question 6", "Question 7", "Question 8",
           "Question 9", "Question 10", "Question 11", "Question 12"]
+
+#make progress bar
+trackershape = Rectangle(Point(0,350),Point(170,390))
+trackershape.setFill("white")
+trackershape.setOutline("black")
+trackernum = ["Question 1/12", "Question 2/12", "Question 3/12", "Question 4/12",
+          "Question 5/12", "Question 6/12", "Question 7/12", "Question 8/12",
+          "Question 9/12", "Question 10/12", "Question 11/12", "Question 12/12"]
 
 #make list of options
 #library
@@ -152,6 +160,7 @@ mocslogo.draw(win)
 
 #start questions
 #initialize objects for while loop
+tracker = Text(Point(82, 370), trackernum)
 qnum = Text(Point(300, 60), numofq)
 qnum.setStyle("bold")
 qnum.setSize(20)
@@ -167,6 +176,7 @@ optc.setSize(11)
 optd.setSize(11)
 i = 0
 
+
 finished = False
 while True:
 
@@ -177,7 +187,7 @@ while True:
         y = pt.getY()
 
         #Begin quiz
-        if x >= 250 and x <=350 and y >= 250 and y <= 350:
+        if x >= 250 and x <=350 and y >= 250 and y <= 300:
             instructions.setText("Click the box next to the option that most applies to you, \nthen click next!")
             instructions.move(0,200)
             instructions.setStyle("bold")
@@ -204,10 +214,16 @@ while True:
                 bbutton.draw(win)
                 cbutton.draw(win)
                 dbutton.draw(win)
-                
-                
+
                 qnum.setText(numofq[i])
                 qnum.draw(win)
+
+                trackershape.draw(win)
+
+                tracker.setText(trackernum[i])
+                tracker.setStyle("bold")
+                tracker.setSize(17)
+                tracker.draw(win)
 
                 hasstarted = True
 
@@ -268,6 +284,12 @@ while True:
             
                 qnum.undraw()
 
+                fscsign.undraw()
+
+                trackershape.undraw()
+
+                tracker.undraw()
+
                 startlabel.setText("Finish!")
                 startlabel.setStyle("italic")
 
@@ -285,7 +307,6 @@ while True:
                     opta.move(50,0)
                     rinkerpic1 = Image(Point(500, 320), os.path.join(root, "rinker.png"))
                     rinkerpic1.draw(win)
-                    
 
                     finished = waitforfinish(win, optd)
 
@@ -305,6 +326,8 @@ while True:
                     opta.move(50,0)
                     tutuspic1 = Image(Point(530,325),os.path.join(root, "coffee.png"))
                     tutuspic1.draw(win)
+                    bagels = Image(Point(100,310), os.path.join(root, "bagels.png"))
+                    bagels.draw(win)
                     
                     finished = waitforfinish(win,optd)
                         
@@ -355,11 +378,14 @@ while True:
                     opta.move(50,25)
                     tiepic = Image(Point(500,310), os.path.join(root, "tie2.png"))
                     tiepic.draw(win)
+                    gomocs = Image(Point(100,310), os.path.join(root, "yogo.png"))
+                    gomocs.draw(win)
                    
                     finished = waitforfinish(win, optd)
 
             #Run through the questions   
             else:
+
                 abutton.setFill("light gray")
                 bbutton.setFill("light gray")
                 cbutton.setFill("light gray")
@@ -373,6 +399,17 @@ while True:
                 optd.setText(D[i])
                 
                 qnum.setText(numofq[i])
+
+                fscsign = Image(Point(300, 360), os.path.join(root, "pattern.png"))
+                fscsign.draw(win)
+
+                #put the question tracker infront of the fsc sign
+                tracker.undraw()
+                trackershape.undraw()
+                trackershape.draw(win)
+                tracker.setText(trackernum[i])
+                tracker.draw(win)
+                
 
                 pt3 = win.getMouse()
                 while True:
@@ -409,7 +446,7 @@ while True:
 
                     #if misclick 
                     else:
-                        instructions.setText("Sorry, you didn't click in the right place, \nplease try again!")
+                        instructions.setText("Sorry, you didn't click the right place, \nplease try again!")
                         pt3 = win.getMouse()
                         x = pt3.getX()
                         y = pt3.getY()
