@@ -297,8 +297,9 @@ while True:
                 if rinker > tutus and rinker > library and rinker > yourdorm:
                     title.setText("You should study at Rinker!")
                     opta.setText("Rinker is the perfect place for you to study! \
-                                \nYou enjoy the quiet aspects of the library, but don't like how crowded it can be. \
-                                \nRinker is a place full of hidden study places we don't always think of. \
+                                \nYou enjoy the quiet aspects of the library, but \
+                                \ndon't like how crowded it can be. Rinker is a place \
+                                \nfull of hidden study places we don't always think of. \
                                 \nTheres computer access, tech help when needed, and printing options! \
                                 \nIt has a very convinent location next to the caf and the dorms, \
                                 \nso being hungry or meeting with a group is a piece of cake! \
@@ -317,8 +318,8 @@ while True:
                                 \nplus who doesn't love a cup of coffee while studying? \
                                 \nYou're not easily distracted, so being around people \
                                 \nand noise doesn't bother you. It could be that \
-                                \nyou're working on a group project, or you just like having all \
-                                \nof your materials sprawled out on a table. \
+                                \nyou're working on a group project, or you just like \
+                                \nhaving all of your materials sprawled out on a table. \
                                 \nThe community study spaces are great for group projects \
                                 \nor study sessions, and the windows double as huge wipe boards! \
                                 \nSo now you know where to go, so get studying!")
@@ -326,7 +327,7 @@ while True:
                     opta.move(50,0)
                     tutuspic1 = Image(Point(530,325),os.path.join(root, "coffee.png"))
                     tutuspic1.draw(win)
-                    bagels = Image(Point(100,310), os.path.join(root, "bagels.png"))
+                    bagels = Image(Point(100,325), os.path.join(root, "bagels.png"))
                     bagels.draw(win)
                     
                     finished = waitforfinish(win,optd)
@@ -334,12 +335,14 @@ while True:
                 elif library > tutus and library > rinker and library > yourdorm:
                     title.setText("You should study at the library!")
                     opta.setText("The library is the perfect place for you to study! \
-                                 \nLike a lot of students, you need a distraction free zone while you're studying. \
-                                \nThe cubbies in the library are the perfect place to study for a hard test, \
-                                \nbecause it is far from distractions. It helps that you are mostly on campus \
-                                \nall day anyway. The library has a convenient location near Tutu's, \
-                                \nwithout the busy environment. \
-                                \nSo now you know where to go, so get studying!")
+                                 \nLike a lot of students, you need a distraction free \
+                                 \nzone while you're studying. The cubbies in the library \
+                                 \nare the perfect place to study for a hard test, \
+                                 \nbecause it is far from distractions. It helps that \
+                                 \nyou are mostly on campus all day anyway. The library \
+                                 \nhas a convenient location near Tutu's, without  \
+                                 \nthe busy environment. \
+                                 \nSo now you know where to go, so get studying!")
                     opta.setTextColor("blue")
                     opta.move(50,0)
                     librarypic1 = Image(Point(500,310), os.path.join(root, "library.png"))
@@ -350,7 +353,7 @@ while True:
                 elif yourdorm > tutus and yourdorm > rinker and yourdorm > library:
                     title.setText("You should study at your OWN dorm!")
                     opta.setText("Your dorm is the perfect place for you to study. \
-                                        \nEvery once in a while, people just need to have a chill study time. \
+                                        \nEvery once in a while, people need to have chill study time. \
                                         \nThis is the most comfortable place you can be, because you \
                                         \ncan be in pajamas, laying down, and eating snack food too!\
                                         \nBecause you tend to need everything, (like EVERYTHING) in \
@@ -378,7 +381,7 @@ while True:
                     opta.move(50,25)
                     tiepic = Image(Point(500,310), os.path.join(root, "tie2.png"))
                     tiepic.draw(win)
-                    gomocs = Image(Point(100,310), os.path.join(root, "yogo.png"))
+                    gomocs = Image(Point(100,325), os.path.join(root, "yogo.png"))
                     gomocs.draw(win)
                    
                     finished = waitforfinish(win, optd)
